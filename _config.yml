@@ -1,6 +1,7 @@
 title: Nathaniel Good
 description: Technical writing, projects, and security notes
 repository: oneiros/Portfolio
+url: "https://stanleygvi.com"
 markdown: kramdown
 permalink: /technical-writing/:categories/:title/
 exclude:
