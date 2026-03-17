@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nathaniel Good | Published</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical writing and published work by Nathaniel Good.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1 class="brand">Published</h1>
+      <p class="subtitle">Technical writing that documents implementation details and usage behavior.</p>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="portfolio.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a class="active" href="published.html">Published</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="section">
+        <h2>Technical Writing</h2>
+        <div class="card">
+          <h3>Sections</h3>
+          <ul class="list">
+            <li><a href="technical-writing/project-writeups/">Project Write-Ups</a></li>
+            <li><a href="technical-writing/security-findings/">Security Findings</a></li>
+            <li><a href="technical-writing/ctf-walkthroughs/">CTF Walkthroughs</a></li>
+            <li><a href="technical-writing/technical-experiences/">Technical Experiences</a></li>
+            <li><a href="technical-writing/">All Technical Writing</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Featured Writing</h2>
+        <div class="card">
+          <h3>CCDC Notes (In Progress)</h3>
+          <p class="item-meta">Technical experience • March 17, 2026</p>
+          <p>
+            Linked competition notes covering machine hardening, service review, and the defensive checks I am
+            turning into a structured write-up as the season continues.
+          </p>
+          <p><a href="technical-writing/technical-experiences/ccdc-notes-in-progress/">Read the notes</a></p>
+        </div>
+        <div class="card">
+          <h3>Splitify: Building a Playlist Clustering Tool</h3>
+          <p class="item-meta">Project write-up • March 14, 2026</p>
+          <p>
+            Architecture and implementation notes covering audio-feature clustering, API fallback handling,
+            caching strategy, and async processing tradeoffs.
+          </p>
+          <p><a href="technical-writing/project-writeups/splitify-building-a-playlist-clustering-tool/">Read the write-up</a></p>
+        </div>
+        <div class="card">
+          <h3>MITRE Command Pipeline</h3>
+          <p class="item-meta">Project write-up • December 13, 2025</p>
+          <p>
+            Notes on building a multi-stage LLM pipeline for ATT&CK-aligned command generation with retrieval,
+            structured prompts, validation constraints, and dataset batching.
+          </p>
+          <p><a href="technical-writing/project-writeups/mitre-command-pipeline-building-an-attack-command-generation-pipeline/">Read the write-up</a></p>
+        </div>
+        <div class="card">
+          <h3>mitmproxy: HAR Support</h3>
+          <p class="item-meta">Google Summer of Code, 2023</p>
+          <p>
+            Content includes implementation details relevant to users and contributors, including format handling,
+            conversion behavior, and test expectations.
+          </p>
+          <p><a href="https://mitmproxy.org/posts/har-support/" target="_blank" rel="noreferrer">Read the post</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© <span id="year"></span> Nathaniel Good</footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

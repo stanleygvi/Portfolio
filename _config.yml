@@ -1,0 +1,14 @@
+title: Nathaniel Good
+description: Technical writing, projects, and security notes
+repository: oneiros/Portfolio
+markdown: kramdown
+permalink: /technical-writing/:categories/:title/
+exclude:
+  - posts
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: technical-post

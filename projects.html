@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nathaniel Good | Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project portfolio for Nathaniel Good with links to GitHub repositories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1 class="brand">Projects</h1>
+      <p class="subtitle">Implementation summaries with stack details and source links.</p>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="portfolio.html">Home</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="published.html">Published</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="section">
+        <div class="card">
+          <h3>Splitify</h3>
+          <p class="item-meta">Founder and Full Stack Developer • June 2024 - Present • Python, JavaScript</p>
+          <p>
+            Splitify is a playlist clustering project that partitions large Spotify playlists into smaller groups
+            using weighted audio features and a Python backend exposed to a JavaScript client.
+          </p>
+          <p>
+            Implementation work included Gaussian Mixture Model clustering, multi-source feature resolution,
+            cache-backed request reduction, and async progress reporting for long-running playlist jobs. The interface
+            supports iterative runs with adjustable feature weights instead of manual per-track sorting.
+          </p>
+          <p>
+            <a href="https://github.com/stanleygvi/splitify" target="_blank" rel="noreferrer">GitHub Repository</a>
+            |
+            <a href="technical-writing/project-writeups/splitify-building-a-playlist-clustering-tool/">Read the write-up</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h3>Slug Events</h3>
+          <p class="item-meta">Product Owner and Developer • January 2025 - Present • Flask, Next.js, GCP</p>
+          <p>
+            Slug Events is a local events platform for Santa Cruz. Work spans Flask backend development, Next.js
+            frontend implementation, and deployment on Google Cloud Platform.
+          </p>
+          <p>
+            Responsibilities include feature implementation, sprint planning inputs, release coordination, and CI/CD
+            maintenance. Delivery work includes coordinating frontend/backend dependencies, enforcing branch workflow,
+            and validating release readiness each sprint.
+          </p>
+          <p><a href="https://github.com/Slug-Events/Slug-Events" target="_blank" rel="noreferrer">GitHub Repository</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h3>MITRE_CMD_GEN</h3>
+          <p class="item-meta">Security Automation Project • Python • Updated December 2025</p>
+          <p>
+            MITRE_CMD_GEN is a Python pipeline for generating MITRE ATT&CK-aligned command data using staged retrieval,
+            scenario generation, command generation, and validation steps instead of a single prompt.
+          </p>
+          <p>
+            <a href="https://github.com/stanleygvi/MITRE_CMD_GEN" target="_blank" rel="noreferrer">GitHub Repository</a>
+            |
+            <a href="technical-writing/project-writeups/mitre-command-pipeline-building-an-attack-command-generation-pipeline/">Read the write-up</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">© <span id="year"></span> Nathaniel Good</footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

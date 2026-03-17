@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | Nathaniel Good</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <p class="subtitle">Technical Writing</p>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="{{ '/portfolio.html' | relative_url }}">Home</a>
+        <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+        <a href="{{ '/experience.html' | relative_url }}">Experience</a>
+        <a class="active" href="{{ '/published.html' | relative_url }}">Published</a>
+        <a href="{{ '/skills.html' | relative_url }}">Skills</a>
+        <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="section">
+        <h1 class="brand article-title">{{ page.title }}</h1>
+        <p class="item-meta">
+          {{ page.date | date: "%B %-d, %Y" }}
+          {% if page.categories and page.categories.size > 0 %}
+            | {{ page.categories | join: ", " }}
+          {% endif %}
+        </p>
+        {{ content }}
+      </section>
+      <section class="section">
+        <p><a href="{{ '/technical-writing/' | relative_url }}">Back to Technical Writing</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">© <span id="year"></span> Nathaniel Good</footer>
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
