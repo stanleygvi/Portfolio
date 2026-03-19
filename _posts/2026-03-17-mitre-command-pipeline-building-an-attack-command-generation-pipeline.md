@@ -5,17 +5,9 @@ categories: [project-writeups]
 tags: [mitre, llm, rag, security, python]
 ---
 
-# Automated MITRE ATT&CK Command Generation Pipeline
-
-**Course:** CSE 132 – Computer Security
-
-**Name:** Stanley Good
-
-**Date:** December 12th 2025
-
 ## Introduction
 
-This project was completed as the final assignment for CSE 132. The goal of this project was to build an automated pipeline that generated commands aligned with the MITRE ATT&CK Framework.
+The goal of this project was to build an automated pipeline that generated commands aligned with the MITRE ATT&CK Framework.
 
 My initial approach to this project was prompting a large language model to generate commands directly from a technique name or ID. This generated commands that looked plausible but did not fulfill the diversity and uniqueness requirements of the assignment. The model tended to reuse the same commands, confuse techniques, or produce output that were similar to the technique but not directly aligned. These problems became more obvious as I tried to scale the generation process because it was producing large batches of the same commands with minor changes like different flags.
 
@@ -87,7 +79,7 @@ The scenarios that were generating kept following the same structure of download
 #### Scenario Generation Prompt Structure
 
 | Prompt Component | Why This Was Included |
-|------------------|-----------------------|
+| ------------------ | ----------------------- |
 | MITRE technique context | Provides the correct sub-technique description so scenarios stay aligned with the intended attacker behavior. |
 | Structured scenario format (objective, method, OS) | Ensures each scenario describes a clear attacker goal and how it is achieved, making it easy to translate into a command. |
 | Meaningful attacker action requirement | Prevents vague or trivial scenarios by requiring a concrete attacker behavior that demonstrates the technique. |
@@ -110,7 +102,7 @@ Another major issue the model producing commands that were close, but did not cl
 #### Command Generation Prompt Structure
 
 | Prompt Component | Why This Was Included |
-|------------------|-----------------------|
+| ------------------ | ----------------------- |
 | Single-command JSON output | Forces the model to return exactly one command in a structured format that is easy to parse and validate. |
 | Scenario-to-command requirement | Ensures the command directly implements the given scenario without adding extra actions. |
 | Technique-specific starting tool | Prevents generic system commands by requiring a tool that demonstrates the intended MITRE sub-technique. |
@@ -142,7 +134,7 @@ I used the command validation model as a filter for pruning out bad commands for
 #### Command Validation Prompt Structure
 
 | Prompt Component | Why This Was Included |
-|------------------|-----------------------|
+| ------------------ | ----------------------- |
 | Clearly limited validator role | Prevents the validator from generating new commands or changing the original attacker behavior. |
 | Allowed-fix list | Limits corrections to small, safe changes like syntax fixes, quoting repairs, or OS mismatches. |
 | Technique correctness check | Ensures the command still demonstrates the intended MITRE sub-technique after validation. |
